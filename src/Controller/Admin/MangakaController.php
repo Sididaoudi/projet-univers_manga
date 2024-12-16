@@ -62,7 +62,7 @@ class MangakaController extends AbstractController
 
         return $this->render('admin/mangaka/edit.html.twig', [
             'mangaka' => $mangaka,
-            'fomr' => $form
+            'form' => $form
         ]);
     }
 

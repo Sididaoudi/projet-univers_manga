@@ -1,28 +1,33 @@
 import React, { useState } from "react";
-// import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Search from "../Search/Search";
 import { Link } from "react-router-dom";
-
+import "./Navbar.css";
 
 const Navbar = () => {
-  // const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <nav className="nav">
       <ul className="nav-links">
-        <li><Link to="/">Accueil</Link></li>
+        <li>
+          <Link to="/">Accueil</Link>
+        </li>
         <li className="dropdown">
-          {/* <Link to="/manga-overview">Mangas</Link> */} <a href="">Mangas</a>
+          <a href="#">Mangas</a>
           <ul className="dropdown-content">
-            <li><Link to="/AllManga">Tous les mangas</Link></li>
-               <li><Link to="/Release">Planning des sorties</Link></li>
-            <li> <a href="">Genres</a></li>
+            <li>
+              <Link to="/AllManga">Tous les mangas</Link>
+            </li>
+            <li>
+              <Link to="/Release">Planning des sorties</Link>
+            </li>
           </ul>
         </li>
-          <Search />
+        <Search />
       </ul>
 
-      {/* <div className="navbar-smallscreen">
+      <div className="navbar-smallscreen">
         <GiHamburgerMenu
           color="#fff"
           fontSize={30}
@@ -37,14 +42,19 @@ const Navbar = () => {
               onClick={() => setToggleMenu(false)}
             />
             <ul className="navbar-smallscreen_links">
-              <li><Link to="/">Accueil</Link></li>
-              <li><Link to="/AllManga">Tous les mangas</Link></li>
-              <li><Link to="/CultManga">Planning des sorties</Link></li>
-              <li><Link to="/Review">Critiques</Link></li>
+              <li>
+                <Link to="/">Accueil</Link>
+              </li>
+              <li>
+              <Link to="/AllManga">Tous les mangas</Link>
+              </li>
+              <li>
+               <Link to="/Release">Planning des sorties</Link>
+              </li>
             </ul>
           </div>
         )}
-      </div> */}
+      </div>
     </nav>
   );
 };

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 const PlanningOfTheWeek = () => {
   const [mangas, setMangas] = useState([]);
 
+
+  // const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     fetch("http://localhost:8000/api/mangas")
       .then((response) => response.json())
@@ -47,7 +49,7 @@ const PlanningOfTheWeek = () => {
       </div>
       <div className="more-Btn">
           <button>
-            <Link to="/Release" >Planning des sorties</Link>
+            <Link to="/Release">Planning des sorties</Link>
           </button>
       </div>
     </section>

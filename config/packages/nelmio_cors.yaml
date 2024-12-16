@@ -2,12 +2,32 @@ nelmio_cors:
     defaults:
         origin_regex: true
         allow_origin: ['%env(CORS_ALLOW_ORIGIN)%']
+        # allow_origin: ['http://localhost:3000']
         allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
         allow_headers: ['Content-Type', 'Authorization']
         expose_headers: ['Link']
         max_age: 3600
     paths:
-        '^/': 
+        '^/api': 
             allow_origin: ['http://localhost:3000']
+            # allow_origin: ['https://univers-manga-react-1.onrender'] 
             allow_methods: ['GET', 'OPTIONS']
             allow_headers: ['Content-Type', 'Authorization']
+
+# nelmio_cors:
+#     defaults:
+#         origin_regex: true
+#         allow_origin:
+#             # Ajoutez localhost, localhost avec port et votre domaine de production
+#             - '^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$'
+#             - 'https://univers-manga-react-1.onrender.com'
+#         allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
+#         allow_headers: ['Content-Type', 'Authorization']
+#         expose_headers: ['Link']
+#         max_age: 3600
+#     paths:
+#         '^/api': 
+#             allow_origin: 
+#                 - 'https://univers-manga-react-1.onrender.com'
+#             allow_methods: ['GET', 'OPTIONS']
+#             allow_headers: ['Content-Type', 'Authorization']
